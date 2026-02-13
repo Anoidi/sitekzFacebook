@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- TikTok Pixel Code Start -->
-<!-- Meta Pixel Code -->
-<!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -15,11 +13,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init', '1837066326958924');
-fbq('set', 'autoConfig', 'true', '1837066326958924');
 fbq('track', 'PageView');
-
-console.log('[META] fbq type:', typeof fbq);
-console.log('[META] PageView fired');
 </script>
 <noscript>
   <img height="1" width="1" style="display:none"
@@ -201,7 +195,7 @@ console.log('[META] PageView fired');
         
         <p class="cta-text">⬇️ Пиши в Телеграм ⬇️</p>
         
-<a id="tgBtn" class="cta-button" href="https://t.me/GRANDO_WRKHR">
+        <a id="tgBtn" class="cta-button" href="https://t.me/GRANDO_WRKHR" target="_blank" rel="noopener">
             <span>Написать в Telegram</span>
         </a>
         
@@ -211,21 +205,21 @@ console.log('[META] PageView fired');
     </div>
     
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tgButton = document.getElementById('tgBtn');
-
-    if (tgButton) {
-        tgButton.addEventListener('click', function() {
-            if (typeof fbq === 'function') {
-                fbq('track', 'Lead');
+        // Отслеживание кликов Meta Pixel
+        document.addEventListener('DOMContentLoaded', function() {
+            const tgButton = document.getElementById('tgBtn');
+            
+            if (tgButton) {
+                tgButton.addEventListener('click', function(e) {
+                    // Отправляем событие Lead в Meta Pixel
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead');
+                        console.log('Meta Pixel: Lead event sent');
+                    }
+                });
             }
-            setTimeout(function() {
-                window.location.href = tgButton.href;
-            }, 300);
         });
-    }
-});
-</script>
+    </script>
 
 </body>
 </html>
