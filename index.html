@@ -204,18 +204,21 @@ src="https://www.facebook.com/tr?id=1837066326958924&ev=PageView&noscript=1"
     </div>
     
     <script>
-        // Meta Pixel Lead tracking
-        document.addEventListener('DOMContentLoaded', function() {
-            const tgButton = document.getElementById('tgBtn');
-            
-            if (tgButton) {
-                tgButton.addEventListener('click', function() {
-                    if (typeof fbq === 'function') {
-                        fbq('track', 'Lead');
-                    }
-                });
+document.addEventListener('DOMContentLoaded', function() {
+    const tgButton = document.getElementById('tgBtn');
+
+    if (tgButton) {
+        tgButton.addEventListener('click', function() {
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
             }
+            setTimeout(function() {
+                window.location.href = tgButton.href;
+            }, 300);
         });
-    </script>
+    }
+});
+</script>
+
 </body>
 </html>
