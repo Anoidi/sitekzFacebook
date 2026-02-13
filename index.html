@@ -195,31 +195,14 @@ fbq('track', 'PageView');
         
         <p class="cta-text">⬇️ Пиши в Телеграм ⬇️</p>
         
-        <a id="tgBtn" class="cta-button" href="https://t.me/GRANDO_WRKHR" target="_blank" rel="noopener">
+        <button id="tgBtn" class="cta-button" onclick="fbq('track', 'Lead'); window.open('https://t.me/GRANDO_WRKHR', '_blank');">
             <span>Написать в Telegram</span>
-        </a>
+        </button>
         
         <p class="trust-badge">
             ✅ Обучение и страховка Оплачиваются! 
         </p>
     </div>
-    
-    <script>
-        // Отслеживание кликов Meta Pixel
-        document.addEventListener('DOMContentLoaded', function() {
-            const tgButton = document.getElementById('tgBtn');
-            
-            if (tgButton) {
-                tgButton.addEventListener('click', function(e) {
-                    // Отправляем событие Lead в Meta Pixel
-                    if (typeof fbq === 'function') {
-                        fbq('track', 'Lead');
-                        console.log('Meta Pixel: Lead event sent');
-                    }
-                });
-            }
-        });
-    </script>
 
 </body>
 </html>
