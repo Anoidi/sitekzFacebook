@@ -123,6 +123,8 @@ fbq('track', 'PageView');
             box-shadow: 0 10px 30px rgba(0, 153, 255, 0.4);
             transition: all 0.3s ease;
             text-transform: uppercase;
+            border: none;
+            cursor: pointer;
         }
         
         .cta-button:active {
@@ -195,7 +197,7 @@ fbq('track', 'PageView');
         
         <p class="cta-text">⬇️ Пиши в Телеграм ⬇️</p>
         
-        <button id="tgBtn" class="cta-button" onclick="fbq('track', 'Lead'); window.open('https://t.me/GRANDO_WRKHR', '_blank');">
+        <button id="telegramBtn" class="cta-button">
             <span>Написать в Telegram</span>
         </button>
         
@@ -203,6 +205,16 @@ fbq('track', 'PageView');
             ✅ Обучение и страховка Оплачиваются! 
         </p>
     </div>
+    
+    <script>
+        document.getElementById('telegramBtn').addEventListener('click', function() {
+            // Отправляем событие Lead в Meta Pixel
+            fbq('track', 'Lead');
+            
+            // Открываем Telegram
+            window.open('https://t.me/GRANDO_WRKHR', '_blank');
+        });
+    </script>
 
 </body>
 </html>
