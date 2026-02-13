@@ -20,6 +20,7 @@ fbq('track', 'PageView');
   src="https://www.facebook.com/tr?id=1837066326958924&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Meta Pixel Code -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📦 Вакансии: Курьер, Доставщик</title>
@@ -122,6 +123,8 @@ fbq('track', 'PageView');
             box-shadow: 0 10px 30px rgba(0, 153, 255, 0.4);
             transition: all 0.3s ease;
             text-transform: uppercase;
+            border: none;
+            cursor: pointer;
         }
         
         .cta-button:active {
@@ -194,9 +197,9 @@ fbq('track', 'PageView');
         
         <p class="cta-text">⬇️ Пиши в Телеграм ⬇️</p>
         
-        <a id="tgBtn" class="cta-button" href="https://t.me/GRANDO_WRKHR" target="_blank" rel="noopener">
+        <button id="telegramBtn" class="cta-button">
             <span>Написать в Telegram</span>
-        </a>
+        </button>
         
         <p class="trust-badge">
             ✅ Обучение и страховка Оплачиваются! 
@@ -204,18 +207,14 @@ fbq('track', 'PageView');
     </div>
     
     <script>
-        // Meta Pixel Lead tracking
-        document.addEventListener('DOMContentLoaded', function() {
-            const tgButton = document.getElementById('tgBtn');
+        document.getElementById('telegramBtn').addEventListener('click', function() {
+            // Отправляем событие Lead в Meta Pixel
+            fbq('track', 'Lead');
             
-            if (tgButton) {
-                tgButton.addEventListener('click', function() {
-                    if (typeof fbq === 'function') {
-                        fbq('track', 'Lead');
-                    }
-                });
-            }
+            // Открываем Telegram
+            window.open('https://t.me/GRANDO_WRKHR', '_blank');
         });
     </script>
+
 </body>
 </html>
